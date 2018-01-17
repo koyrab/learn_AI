@@ -1,0 +1,16 @@
+{
+    "etudiants": [
+        {
+            "prenom": "",
+            "nom": "",
+            "matricule": "01 234 567",
+            "courriel": "prenom.nom@USherbrooke.ca"
+        },
+        {
+            "prenom": "",
+            "nom": "",
+            "matricule": "01 234 567",
+            "courriel": "prenom.nom@USherbrooke.ca"
+        }
+    ]
+}
