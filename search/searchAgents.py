@@ -485,8 +485,20 @@ class ClosestDotSearchAgent(SearchAgent):
         problem = AnyFoodSearchProblem(gameState)
 
         "*** YOUR CODE HERE ***"
-        util.raiseNotDefined()
-
+        #util.raiseNotDefined()
+        
+        foods = []
+        foodGrid = gameState.getFood()
+        for x, row in enumerate(foodGrid):
+            for y, cell in enumerate(row):
+                if foodGrid[x][y]:
+                    foods.append((mazeDistance(gameState.getPacmanPosition(), (x,y), gameState), (x, y)))
+        if foods:
+            coordinate = min(foods)[1]
+            prob = PositionSearchProblem(gameState, start=startPosition, goal=coordinate, warn=False)
+            return search.bfs(prob)
+        return []
+        
 class AnyFoodSearchProblem(PositionSearchProblem):
     """
     A search problem for finding a path to any food.
